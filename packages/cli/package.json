@@ -7,7 +7,7 @@
     "es6": "lib/bin/es6.js"
   },
   "files": [
-    "lib/bin/tsed.js",
+    "lib/bin/es6.js",
     "lib/bin",
     "lib",
     "templates"
@@ -17,27 +17,38 @@
     "cli",
     "es6",
     "typescript",
-    "framework",
-    "rest",
-    "api",
-    "express",
-    "decorators"
+    "migration",
+    "cjs"
   ],
   "dependencies": {
-    "@tsed/cli-core": "2.1.1",
-    "@tsed/logger": "5.5.0",
+    "5to6-codemod": "1.8.0",
+    "@tsed/core": "^6.10.0",
+    "@tsed/di": "^6.10.0",
+    "@tsed/cli-core": "2.1.2",
+    "@tsed/logger": "5.5.3",
     "change-case": "4.1.1",
-    "tslib": "1.11.1",
-    "normalize-path": "3.0.0",
-    "globby": "11.0.1",
-    "lodash": "4.17.20",
-    "5to6-codemod": "1.0.0",
     "esm": "3.2.25",
-    "jscodeshift": "0.3.12"
+    "globby": "11.0.1",
+    "jscodeshift": "0.11.0",
+    "lodash": "4.17.20",
+    "normalize-path": "3.0.0",
+    "tslib": "2.0.3"
   },
   "devDependencies": {
+    "@types/axios": "0.14.0",
+    "@types/commander": "2.12.2",
+    "@types/consolidate": "0.14.0",
+    "@types/figures": "3.0.1",
+    "@types/fs-extra": "8.1.0",
+    "@types/globby": "9.1.0",
+    "@types/inquirer": "6.5.0",
+    "@types/js-yaml": "3.12.3",
+    "@types/listr": "0.14.2",
+    "@types/read-pkg-up": "6.0.0",
+    "@types/semver": "7.2.0",
+    "@types/update-notifier": "4.1.0",
     "@types/lodash": "4.14.165",
-    "@tsed/cli-testing": "2.1.1"
+    "@tsed/cli-testing": "2.1.2"
   },
   "scripts": {
     "build": "tsc --build tsconfig.compile.json"

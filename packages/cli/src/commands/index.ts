@@ -1,3 +1,3 @@
-import {MigrateCmd} from "@tsed/cli";
+import {MigrateCmd} from "./migrate/MigrateCmd";
 
 export default [MigrateCmd];
