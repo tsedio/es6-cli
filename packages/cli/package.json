@@ -1,0 +1,49 @@
+{
+  "name": "@tsed/es6-cli",
+  "version": "1.0.0",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "bin": {
+    "es6": "lib/bin/es6.js"
+  },
+  "files": [
+    "lib/bin/tsed.js",
+    "lib/bin",
+    "lib",
+    "templates"
+  ],
+  "description": "CLI to migrate a project from require to import/exports ",
+  "keywords": [
+    "cli",
+    "es6",
+    "typescript",
+    "framework",
+    "rest",
+    "api",
+    "express",
+    "decorators"
+  ],
+  "dependencies": {
+    "@tsed/cli-core": "2.1.1",
+    "@tsed/logger": "5.5.0",
+    "change-case": "4.1.1",
+    "tslib": "1.11.1",
+    "normalize-path": "3.0.0",
+    "globby": "11.0.1",
+    "lodash": "4.17.20",
+    "5to6-codemod": "1.0.0",
+    "esm": "3.2.25",
+    "jscodeshift": "0.3.12"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.14.165",
+    "@tsed/cli-testing": "2.1.1"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.compile.json"
+  },
+  "engines": {
+    "node": ">=8.9"
+  },
+  "peerDependencies": {}
+}
