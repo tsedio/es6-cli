@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "5to6-codemod": "1.8.0",
-    "@tsed/cli-core": "2.7.2",
+    "@tsed/cli-core": "2.7.3",
     "@tsed/core": "6.10.3",
     "@tsed/di": "6.10.3",
     "@tsed/logger": "5.5.3",
