@@ -62,25 +62,34 @@ export class MigrateCmd implements CommandProvider {
       {
         title: `Find files...`,
         task: async () => {
-          ctx.files = await this.fs.scan([ctx.pattern], {});
+          ctx.files = await this.fs.scan([].concat(ctx.pattern as any).filter(Boolean), {});
 
           this.logger.info(`Found ${ctx.files.size} files...`);
         }
       },
       {
         title: "Transforming module.exports/exports to export...",
+        skip() {
+          return !ctx.files.size;
+        },
         task: () => {
           return this.exportify.transform(ctx);
         }
       },
       {
         title: "Transforming require to import...",
+        skip() {
+          return !ctx.files.size;
+        },
         task: () => {
           return this.importify.transform(ctx);
         }
       },
       {
         title: "Clean code...",
+        skip() {
+          return !ctx.files.size;
+        },
         task: () => {
           return this.cleanCode.transform(ctx);
         }
