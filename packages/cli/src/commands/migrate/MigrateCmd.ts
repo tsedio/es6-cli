@@ -1,4 +1,4 @@
-import {Command, CommandProvider, Inject} from "@tsed/cli-core";
+import {CliExeca, Command, CommandProvider, Inject} from "@tsed/cli-core";
 import {Logger} from "@tsed/logger";
 import {MigrateContext} from "../../interfaces/MigrateContext";
 import {CleanCode} from "../../services/CleanCode";
@@ -40,11 +40,21 @@ export class MigrateCmd implements CommandProvider {
   @Inject()
   logger: Logger;
 
+  @Inject()
+  cliExeca: CliExeca;
+
   $mapContext(ctx: Partial<MigrateContext>): MigrateContext {
     return {
       ...ctx,
+      pattern: ctx.pattern || this.getStagedFiles(),
       files: new Set<string>()
     } as MigrateContext;
+  }
+
+  getStagedFiles() {
+    const files = this.cliExeca.get("git", ["ls-files", "--other", "--modified", "--exclude-standard"]);
+
+    return files.split("\n");
   }
 
   async $exec(ctx: MigrateContext) {
