@@ -2474,10 +2474,10 @@
     tslib "1.11.1"
     update-notifier "4.1.0"
 
-"@tsed/cli-core@2.7.3":
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/@tsed/cli-core/-/cli-core-2.7.3.tgz#fa0ed4d9e583958a7be07f34564aa70338c1760b"
-  integrity sha512-R6+wglrhMLbTSMqBhRl5DJQNBhkw/RzWfM63WrOyvh5BEbHYa55jkELBc75eWVzvpuCh9Y8Wl6SGGKpqG8n+ag==
+"@tsed/cli-core@2.7.4":
+  version "2.7.4"
+  resolved "https://registry.yarnpkg.com/@tsed/cli-core/-/cli-core-2.7.4.tgz#942f84f15ed5f81ef0a848f97fac10a76411ac0c"
+  integrity sha512-sIVx2PMh1YLTETojMGHBnM3LD9je3RXnGhthDncXquGQpmwos+eEULS+g4WQKFO7pAb0agzsOozCKIunOO2hug==
   dependencies:
     "@samverschueren/stream-to-observable" "0.3.1"
     "@tsed/core" "6.10.3"
