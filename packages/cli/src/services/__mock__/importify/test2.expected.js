@@ -1,7 +1,7 @@
 import DefaultExport from '../exports.default'
 import * as AnyExport from '../exports'
 import JsonData from '../exports-test.json'
-import * as Logger from '../logger'
+import Logger from '../logger'
 import * as Configuration from '../configuration'
 import {
   hello

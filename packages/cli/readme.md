@@ -6,9 +6,6 @@ This tool uses [5to6-codemod](https://github.com/5to6/5to6-codemod) under the ho
 
 Inspired by [csj-to-es6](https://github.com/nolanlawson/cjs-to-es6).
 
-## Features
-
-
 ## Installation
 
 ```bash
@@ -19,6 +16,18 @@ Then run it:
 
 ```
 es6 migrate [ --verbose ] files/directories...
+```
+
+## Migrate the latest commit
+
+```
+es6 migrate [ --verbose ] commit
+```
+
+## Migrate the staged files
+
+```
+es6 migrate [ --verbose ] staged
 ```
 
 ## Contributors

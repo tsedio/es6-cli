@@ -1,7 +1,8 @@
-import {CliExeca, Command, CommandProvider, Inject} from "@tsed/cli-core";
+import {Command, CommandProvider, Inject} from "@tsed/cli-core";
 import {Logger} from "@tsed/logger";
 import {MigrateContext} from "../../interfaces/MigrateContext";
 import {CleanCode} from "../../services/CleanCode";
+import {CliGit} from "../../services/CliGit";
 import {Exportify} from "../../services/Exportify";
 import {FsService} from "../../services/FsService";
 import {Importify} from "../../services/Importify";
@@ -12,7 +13,7 @@ import {Importify} from "../../services/Importify";
   description: "Migrate directory or file to import/export ES6",
   args: {
     pattern: {
-      description: "Path or directory to convert file",
+      description: "Path, directory, commit or branch name to convert file (ex: es6 migrate commit|branch|staged)",
       type: String
     }
   },
@@ -41,20 +42,44 @@ export class MigrateCmd implements CommandProvider {
   logger: Logger;
 
   @Inject()
-  cliExeca: CliExeca;
+  cliGit: CliGit;
 
   $mapContext(ctx: Partial<MigrateContext>): MigrateContext {
+    switch (ctx.pattern) {
+      case "staged":
+        ctx.pattern = this.cliGit.getStagedFiles();
+        break;
+      case "commit":
+        ctx.pattern = this.getCommittedFiles();
+        break;
+
+      case "branch":
+        ctx.pattern = this.getBranchFiles();
+        break;
+
+      default:
+        ctx.pattern = ctx.pattern || this.cliGit.getStagedFiles();
+        break;
+    }
+
     return {
       ...ctx,
-      pattern: ctx.pattern || this.getStagedFiles(),
       files: new Set<string>()
     } as MigrateContext;
   }
 
-  getStagedFiles() {
-    const files = this.cliExeca.get("git", ["ls-files", "--other", "--modified", "--exclude-standard"]);
+  getCommittedFiles() {
+    return this.cliGit
+      .getCommitFiles(this.cliGit.getLastCommitID())
+      .filter(({status, file}) => status !== "D" && file.endsWith(".js"))
+      .map(({file}) => file);
+  }
 
-    return files.split("\n");
+  getBranchFiles() {
+    return this.cliGit
+      .getBranchFiles()
+      .filter(({status, file}) => status !== "D" && file.endsWith(".js"))
+      .map(({file}) => file);
   }
 
   async $exec(ctx: MigrateContext) {
