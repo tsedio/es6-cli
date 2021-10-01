@@ -76,7 +76,7 @@
     "@tsed/markdown-it-symbols": "3.3.0",
     "@tsed/monorepo-utils": "1.11.0",
     "@typedproject/ts-doc": "4.0.6",
-    "@types/jest": "26.0.0",
+    "@types/jest": "27.0.2",
     "@types/node": "13.7.7",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
