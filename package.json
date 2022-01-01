@@ -73,7 +73,7 @@
     "update-notifier": "5.0.1"
   },
   "devDependencies": {
-    "@tsed/markdown-it-symbols": "3.3.0",
+    "@tsed/markdown-it-symbols": "3.16.1",
     "@tsed/monorepo-utils": "1.11.0",
     "@typedproject/ts-doc": "4.0.6",
     "@types/jest": "26.0.0",
