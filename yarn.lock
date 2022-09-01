@@ -2581,10 +2581,10 @@
   resolved "https://registry.yarnpkg.com/@tsed/markdown-it-symbols/-/markdown-it-symbols-2.15.0.tgz#0e1a1f0b72d6ae5e655228913befe617a5407dad"
   integrity sha512-0l8P4k6bcRqwxzy8piMoDdS3fqgTw2gMO0xyI/woIqHm7yhbpmrleh2OAmc0bi5SJrrZv1aDUyeyeFoYP8B53g==
 
-"@tsed/markdown-it-symbols@3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@tsed/markdown-it-symbols/-/markdown-it-symbols-3.3.0.tgz#a48b8c4f295dc056d0914a5e3cb3de4a432d6a32"
-  integrity sha512-vY6yPAx2i/bGSVPsOmD28psHEOMQdZbqJGiSgTTHOMi3cWJ4WXi08hIHhaVQbTSaaB2FB8UraGFTI+S9Rs8V/Q==
+"@tsed/markdown-it-symbols@3.20.5":
+  version "3.20.5"
+  resolved "https://registry.yarnpkg.com/@tsed/markdown-it-symbols/-/markdown-it-symbols-3.20.5.tgz#2737bc1d1807d6abdcd4e92235fe2e7ae37b81da"
+  integrity sha512-pMH+wdH4JTq9zarPYMVTqNbCZ71CnEMejEI2U3PmjrXIlgTpT7iOVpHovk4jFFEEWyr0AgZIw5pMlHQi/nLDZg==
 
 "@tsed/monorepo-utils@1.11.0":
   version "1.11.0"
